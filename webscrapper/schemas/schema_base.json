@@ -1,0 +1,31 @@
+{
+    "description": "",
+    "definitions": {
+        "publicacion":{
+            "properties":{
+                "fecha": {
+                    "type":"string"
+                }
+            }
+        }
+    },
+    "type": "object",
+    "properties": {
+        "id": {
+            "type": "string",
+            "pattern":"^\\d{2}\\d{2}\\d{2}"
+        },
+        "precioBase": {
+            "type":"number"
+        },
+        "tipoRemate": {
+            "type": "string",
+            "enum": [
+                "vehiculo",
+                "finca"
+            ]
+        },
+        "segundaPublicacion":{"type":{"$ref":"#/definitions/publicacion"}},
+        "terceraPublicacion":{"type":{"$ref":"#/definitions/publicacion"}}
+    }
+}
